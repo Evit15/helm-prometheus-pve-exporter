@@ -39,6 +39,11 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+          - name: pve
+            mountPath: /etc/pve.yml
+            subPath: pve.yml
+            readOnly: true
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -51,3 +56,10 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+      - name: pve
+        secret:
+          secretName: {{ template "helm-prometheus-pve-exporter.fullname" . }}
+          items:
+          - key: pve.yml
+            path: pve.yml
