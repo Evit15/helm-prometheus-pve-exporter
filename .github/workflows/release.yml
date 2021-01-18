@@ -1,9 +1,9 @@
 name: Release Charts
 
 on:
-  release:
-    types:
-      - created
+  push:
+    branches:
+      - main
 jobs:
   release:
     runs-on: ubuntu-latest
