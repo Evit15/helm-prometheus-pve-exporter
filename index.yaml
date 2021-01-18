@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  helm-prometheus-pve-exporter:
+  - apiVersion: v2
+    appVersion: 2.0.3
+    created: "2021-01-18T07:02:29.087090757Z"
+    description: A Helm chart for Kubernetes
+    digest: 038d93493c2fee4c9b0caaa143f76462790f279d012b853972892bac7263cc04
+    name: helm-prometheus-pve-exporter
+    type: application
+    urls:
+    - https://github.com/Evit15/helm-prometheus-pve-exporter/releases/download/helm-prometheus-pve-exporter-1.0.1/helm-prometheus-pve-exporter-1.0.1.tgz
+    version: 1.0.1
+generated: "2021-01-18T07:02:28.696275002Z"
