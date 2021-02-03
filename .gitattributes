@@ -1,0 +1,2 @@
+*.yaml linguist-detectable=true
+*.tpl linguist-detectable=true
