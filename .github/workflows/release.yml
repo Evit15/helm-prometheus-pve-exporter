@@ -2,8 +2,8 @@ name: Release Charts
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "v*"
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -23,6 +23,11 @@ jobs:
         with:
           version: v3.4.0
 
+      - name: Get Version
+        # You may pin to the exact commit or the version.
+        # uses: battila7/get-version-action@90eb8fc70f6dfcf3f9b95ed8f164d2c05038e729
+        uses: battila7/get-version-action@v2.2.1
+        
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
         env:
